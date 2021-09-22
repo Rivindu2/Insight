@@ -7,9 +7,13 @@
         <entry key="app/src/main/res/drawable-v24/custom_button_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/progress_back.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/round_drawable.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_admin_panel_settings_24.xml" value="0.1259259259259259" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_add_crad.xml" value="0.14628623188405798" />
         <entry key="app/src/main/res/layout/activity_addmovie.xml" value="0.23106060606060605" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_view_movie.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/amcarditem.xml" value="0.20969202898550723" />
       </map>
     </option>
   </component>
