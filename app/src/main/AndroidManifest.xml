@@ -10,7 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".AddCardActivity"
+            android:name=".selectPayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".dashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewCardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CheckingPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +34,7 @@
             android:name=".AddmovieActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AddCardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

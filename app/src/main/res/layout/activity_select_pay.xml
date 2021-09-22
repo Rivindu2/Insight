@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/v_nav2"
+        android:layout_width="413dp"
+        android:layout_height="64dp"
+        android:background="#0844A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_topic"
+        android:layout_width="120dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="20dp"
+        android:text="INSIGHT"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="99dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:text="LOGOUT"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#BAFFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/ic_search"
+        app:layout_constraintStart_toEndOf="@+id/tv_topic"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="52dp" />
+
+    <ImageView
+        android:id="@+id/ic_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/v_nav2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search"
+        android:layout_marginRight="16dp" />
+
+
+    <TextView
+        android:id="@+id/tv_subtopic"
+        android:layout_width="161dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Select Method"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav2" />
+
+    <ImageView
+        android:id="@+id/img_methods"
+        android:layout_width="362dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtopic"
+        app:srcCompat="@drawable/img_methods" />
+
+    <View
+        android:id="@+id/v_view"
+        android:layout_width="321dp"
+        android:layout_height="211dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#0A000000"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_methods" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="311dp"
+        android:layout_height="64dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532">
+
+
+        <RadioButton
+            android:id="@+id/radio_one"
+            android:layout_width="133dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
+            android:checked="true"
+            android:onClick="checkButton"
+            android:text="Credit/Debit" />
+
+        <RadioButton
+            android:id="@+id/radio_two"
+            android:layout_width="137dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="100dp"
+            android:onClick="checkButton"
+            android:text="Paypal" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_view_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Your selection: "
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/button_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_selected"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="4dp"
+        android:text="apply"
+        app:layout_constraintStart_toStartOf="@+id/v_view"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_selected" />
+
+    <Button
+        android:id="@+id/btn_addcard"
+        android:layout_width="322dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:background="#0844A4"
+        android:text="Add Card"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#0844A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_view" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="323dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:background="#0844A4"
+        android:text="Continue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#0844A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_addcard" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
