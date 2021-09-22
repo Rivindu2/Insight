@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".feedbackActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".AddmovieActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".feedbackActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
