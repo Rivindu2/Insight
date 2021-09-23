@@ -121,7 +121,6 @@ public class AddmovieActivity extends AppCompatActivity {
                         //Intent intent=new Intent(AddmovieActivity.this,ViewMovieActivity.class);
                         //startActivity(intent);
                         Reset();
-
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {

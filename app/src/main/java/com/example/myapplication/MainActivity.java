@@ -31,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         AdiminBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 openAdmin();
             }
         });
     }
     public void openAdmin(){
-        Intent intent=new Intent(MainActivity.this,AddmovieActivity.class);
+        Intent intent=new Intent(MainActivity.this,AdminLoginActivity.class);
         startActivity(intent);
     }
 
