@@ -36,7 +36,7 @@ public class dashboardActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(dashboardActivity.this,RegisterActivity.class);
+                Intent intent=new Intent(dashboardActivity.this,UserprofileActivity.class);
                 startActivity(intent);
 
             }
