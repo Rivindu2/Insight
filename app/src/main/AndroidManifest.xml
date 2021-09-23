@@ -10,17 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".AddCradActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AddmovieActivity"
-            android:exported="true" />
+            android:name=".BookNow"
+            android:exported="true"
+            android:label="@string/title_activity_book_now"
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
+        <!-- <activity -->
+        <!-- android:name=".AddCradActivity" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <!-- <activity -->
+        <!-- android:name=".AddmovieActivity" -->
+        <!-- android:exported="true" /> -->
+        <activity android:name=".HomeActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

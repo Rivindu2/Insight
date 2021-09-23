@@ -4,6 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_add_crad.xml" value="0.29483695652173914" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/activity_add_crad.xml" value="0.17962962962962964" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/activity_addmovie.xml" value="0.17962962962962964" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/activity_book_now.xml" value="0.18" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/activity_nav_header_main.xml" value="0.2" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/fragment_coming_soon.xml" value="0.17962962962962964" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/fragment_now_showing.xml" value="0.25" />
+        <entry key="..\:/Projects/Android/Insight/app/src/main/res/layout/movies.xml" value="0.25" />
+        <entry key="..\:/Users/Naveen/AndroidStudioProjects/Insight/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/drawable-v24/custom_button_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/progress_back.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/round_drawable.xml" value="0.1" />
