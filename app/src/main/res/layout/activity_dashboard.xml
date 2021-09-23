@@ -17,29 +17,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/img_search2"
+    <TextView
+        android:id="@+id/verify"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:fontFamily="monospace"
+        android:text="Email is Not verified!"
+        android:textColor="#FF4500"
+        android:textFontWeight="1000"
+        android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_logout3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_search" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/tv_logout3"
-        android:layout_width="99dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_width="162dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="12dp"
+        android:onClick="logout"
         android:text="LOGOUT"
         android:textColor="#C8FFFFFF"
         android:textSize="18sp"
@@ -58,15 +56,16 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="monospace"
         android:text="INSIGHT"
         android:textFontWeight="1000"
@@ -80,20 +79,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="casual"
         android:text="Book Your Tickets For Movies"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="175dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="64dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
@@ -186,7 +185,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="175dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="236dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -253,17 +252,17 @@
 
                 <TextView
                     android:id="@+id/textView10"
-                    android:layout_width="45dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
 
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginStart="68dp"
-                    android:layout_marginLeft="68dp"
+                    android:layout_marginStart="51dp"
+                    android:layout_marginLeft="51dp"
                     android:layout_marginTop="100dp"
-                    android:text="Admin"
+                    android:text="User Account"
                     tools:ignore="DuplicateIds" />
 
                 <ImageView
@@ -292,11 +291,21 @@
         android:id="@+id/imageView4"
         android:layout_width="133dp"
         android:layout_height="129dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/cinema" />
+
+    <Button
+        android:id="@+id/resendCode"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:text="Verify Here"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verify" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

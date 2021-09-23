@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,19 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".dashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserprofileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
             android:name=".selectPayActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CheckingPageActivity"
             android:exported="true" />
         <activity
-            android:name=".dashboardActivity"
+            android:name=".DisplayfirstActivity"
             android:exported="true" />
         <activity
             android:name=".ViewCardActivity"
             android:exported="true" />
         <activity
-            android:name=".CheckingPageActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

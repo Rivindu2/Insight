@@ -3,13 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/font/aclonica.xml" value="0.40208333333333335" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_add_card.xml" value="0.371875" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_add_crad.xml" value="0.29483695652173914" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_addmovie.xml" value="0.28229166666666666" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_checking_page.xml" value="0.3541666666666667" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_dashboard.xml" value="0.371875" />
+        <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_displayfirst.xml" value="0.371875" />
+        <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_login.xml" value="0.3473731884057971" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_register.xml" value="0.3473731884057971" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_select_pay.xml" value="0.3541666666666667" />
+        <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_userprofile.xml" value="0.3473731884057971" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_view_card.xml" value="0.3578125" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/bookingitem.xml" value="0.3541666666666667" />
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/carddetails.xml" value="0.371875" />
