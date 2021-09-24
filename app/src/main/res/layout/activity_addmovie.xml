@@ -50,7 +50,6 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:hint="Movie Cat"
@@ -118,10 +117,6 @@
             android:background="@drawable/custom_button_background"
             android:text="View all Movies Movie"
             android:textAllCaps="false"/>
-
-
-
-
     </LinearLayout>
 
 
