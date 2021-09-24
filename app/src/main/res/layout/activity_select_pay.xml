@@ -36,7 +36,9 @@
         android:layout_width="99dp"
         android:layout_height="28dp"
         android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
         android:text="LOGOUT"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -44,9 +46,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/ic_search"
         app:layout_constraintStart_toEndOf="@+id/tv_topic"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal"
-        android:layout_marginLeft="52dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ic_search"
@@ -54,10 +54,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="@+id/v_nav2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_search"
-        android:layout_marginRight="16dp" />
+        app:srcCompat="@android:drawable/ic_menu_search" />
 
 
     <TextView
@@ -88,8 +88,8 @@
 
     <View
         android:id="@+id/v_view"
-        android:layout_width="321dp"
-        android:layout_height="211dp"
+        android:layout_width="326dp"
+        android:layout_height="251dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -104,11 +104,12 @@
         android:layout_width="316dp"
         android:layout_height="96dp"
         android:layout_centerInParent="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/v_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532">
+        app:layout_constraintTop_toTopOf="@+id/v_view"
+        app:layout_constraintVertical_bias="0.167">
 
 
         <RadioButton
@@ -139,7 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="Your selection: "
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -152,20 +153,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_selected"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
         android:layout_marginTop="4dp"
         android:text="apply"
+        app:layout_constraintBottom_toBottomOf="@+id/v_view"
+        app:layout_constraintEnd_toEndOf="@+id/v_view"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/v_view"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_selected" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_selected"
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
         android:id="@+id/btn_addcard"
         android:layout_width="322dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="12dp"
         android:background="#0844A4"
         android:text="Add Card"
         android:textAllCaps="false"
@@ -173,23 +174,22 @@
         android:textStyle="bold"
         app:backgroundTint="#0844A4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/v_view" />
 
     <Button
-        android:id="@+id/btn_continue"
+        android:id="@+id/btn_c"
         android:layout_width="323dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
         android:background="#0844A4"
         android:text="Continue"
         android:textSize="16sp"
         android:textStyle="bold"
         app:backgroundTint="#0844A4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_addcard" />
 
