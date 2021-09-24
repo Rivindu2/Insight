@@ -9,13 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-
-
-
-
-
-
-
+        <activity
+            android:name=".DisplayfirstActivity"
+            android:exported="true" />
         <activity
             android:name=".AdminLoginActivity"
             android:exported="true" />
