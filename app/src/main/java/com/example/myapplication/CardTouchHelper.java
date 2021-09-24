@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Color;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +32,7 @@ public class CardTouchHelper extends ItemTouchHelper.SimpleCallback {
             adapter.notifyDataSetChanged();
         }else{
             adapter.deletecardData(position);
+
         }
 
     }

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
+
+
+
+
+
+
         <activity
             android:name=".AdminLoginActivity"
             android:exported="true" />
