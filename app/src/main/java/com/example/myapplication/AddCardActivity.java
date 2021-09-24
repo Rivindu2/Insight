@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -23,6 +24,9 @@ public class AddCardActivity extends AppCompatActivity {
     private Button SBtn , VBtn , CBtn;//Chamath
     private FirebaseFirestore db;
     private String uInput1, uInput2, uInput3, uInput4, uId;
+    String userId;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,7 @@ public class AddCardActivity extends AppCompatActivity {
         VBtn=findViewById(R.id.btn_view);
         CBtn=findViewById(R.id.btn_continue);
 
+        fAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         Bundle bundle = getIntent().getExtras();
@@ -95,7 +100,8 @@ public class AddCardActivity extends AppCompatActivity {
     }
 
     private void updateToFireStore(String id, String Input1, String Input2, String Input3, String Input4){
-        db.collection("Card_Details").document(id).update("Input1" , Input1 , "Input2" , Input2 , "Input3" , Input3 , "Input4" , Input4)
+        userId = fAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).collection("CardDetails").document(id).update("Input1" , Input1 , "Input2" , Input2 , "Input3" , Input3 , "Input4" , Input4)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -122,7 +128,9 @@ public class AddCardActivity extends AppCompatActivity {
             map.put("Input3" , Input3);
             map.put("Input4" , Input4);
 
-            db.collection("Card_Details").document(id).set(map)
+            userId = fAuth.getCurrentUser().getUid();
+
+            db.collection("users").document(userId).collection("CardDetails").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

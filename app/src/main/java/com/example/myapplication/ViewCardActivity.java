@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -26,6 +27,10 @@ public class ViewCardActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private MyCardAdapter adapter;
     private List<CardModel> list;
+    String userId;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,7 @@ public class ViewCardActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        fAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         list = new ArrayList<>();
         adapter = new MyCardAdapter(this , list);
@@ -48,8 +54,9 @@ public class ViewCardActivity extends AppCompatActivity {
     }
 
     public void showData(){
+        userId = fAuth.getCurrentUser().getUid();
 
-        db.collection("Card_Details").get()
+        db.collection("users").document(userId).collection("CardDetails").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @SuppressLint("NotifyDataSetChanged")
                     @Override
