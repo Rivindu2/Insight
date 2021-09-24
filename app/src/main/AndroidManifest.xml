@@ -10,10 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".showfeedActivity"
+            android:name=".Cusbooking"
             android:exported="true" />
         <activity
-            android:name=".feedbackActivity"
+            android:name=".CheckingPageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DisplayfirstActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewCardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddCardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".selectPayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserprofileActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"

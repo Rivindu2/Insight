@@ -21,8 +21,6 @@ public class MyAdminAdapter extends RecyclerView.Adapter<MyAdminAdapter.MyViewHo
 
     private ViewMovieActivity activity;
     private List<AdminModel> mlist;
-
-
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
 
 
@@ -57,7 +55,7 @@ public class MyAdminAdapter extends RecyclerView.Adapter<MyAdminAdapter.MyViewHo
     }
 private void notifyRemoved(int position){
         mlist.remove(position);
-        notifyRemoved(position);
+        notifyItemRemoved(position);
         activity.showData();
 }
 

@@ -67,11 +67,11 @@ public class AddmovieActivity extends AppCompatActivity {
         addMovieBtn.setOnClickListener(new View.OnClickListener() {//Onclick addd movie button
             @Override
             public void onClick(View view) {
-                String name=movieName.getText().toString();
-                String cat=movieCat.getText().toString();
                 float division=Integer.parseInt(movieDuration.getText().toString());
                 float s=division/60;
                 String duration=String.valueOf(s);
+                String name=movieName.getText().toString();
+                String cat=movieCat.getText().toString();
 
                  Bundle bundle1=getIntent().getExtras();//check if user wants to update data or add new data
                  if (bundle1!=null){
@@ -79,21 +79,21 @@ public class AddmovieActivity extends AppCompatActivity {
                      updatetoFirestore(id,name,cat,duration);
 
                  }else {
-                     String id= UUID.randomUUID().toString();//generat random variable
+                     String id= UUID.randomUUID().toString();//generate random variable
                      saveToFireStore(id,name,cat,duration);
-
                  }
             }
         });
     }
     private void updatetoFirestore(String id,String name,String cat,String duration){
-        db.collection("MovieDocuments").document(id).update("name",name,"cat",cat,"duration",duration).addOnCompleteListener(new OnCompleteListener<Void>() {
+        db.collection("MovieDocuments").document(id).update("name",name,"cat",cat,"duration",duration)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(AddmovieActivity.this, "Data Successfully updated", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(AddmovieActivity.this, "Error"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddmovieActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -112,16 +112,14 @@ public class AddmovieActivity extends AppCompatActivity {
             map.put("name", name);
             map.put("cat", cat);
             map.put("duration", duration);
-
             db.collection("MovieDocuments").document(id).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(AddmovieActivity.this, "Movie Added", Toast.LENGTH_SHORT).show();
-                        //Intent intent=new Intent(AddmovieActivity.this,ViewMovieActivity.class);
-                        //startActivity(intent);
-                        Reset();
-
+                        movieName.setText("");
+                        movieCat.setText("");
+                        movieDuration.setText("");
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -130,15 +128,8 @@ public class AddmovieActivity extends AppCompatActivity {
                     Toast.makeText(AddmovieActivity.this, "Movie Add failed", Toast.LENGTH_SHORT).show();
                 }
             });
-
-
         }else
-            Toast.makeText(AddmovieActivity.this, "Fields empty", Toast.LENGTH_SHORT).show();
-    }
-    private void Reset(){//reset form
-        movieName.setText("");
-        movieCat.setText("");
-        movieDuration.setText("");
+            Toast.makeText(this, "Empty Fields not Allowed", Toast.LENGTH_SHORT).show();
 
     }
 }

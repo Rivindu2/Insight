@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckingPageActivity">
+
+    <TextView
+        android:id="@+id/movieid5"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="428dp"
+        android:padding="3dp"
+        android:text="Total Price :"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/movieid4"
+        android:layout_width="176dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="404dp"
+        android:padding="3dp"
+        android:text="Show Date :"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/movieid3"
+        android:layout_width="179dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="368dp"
+        android:padding="3dp"
+        android:text="No Of Seats :"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/movieid2"
+        android:layout_width="186dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="344dp"
+        android:padding="3dp"
+        android:text="Movie Name :"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/movieid"
+        android:layout_width="185dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="316dp"
+        android:padding="3dp"
+        android:text="Movie ID"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/v_nav5"
+        android:layout_width="411dp"
+        android:layout_height="64dp"
+        android:background="#0844A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_topic"
+        android:layout_width="105dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="16dp"
+        android:text="INSIGHT"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/v_nav5" />
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="91dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
+        android:text="LOGOUT"
+        android:textColor="#C9FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_topic"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="88dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search"
+        android:layout_marginRight="16dp" />
+
+    <View
+        android:id="@+id/vd_line"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav5" />
+
+    <View
+        android:id="@+id/hd_line"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:background="#28828387"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/tv_paymentnav"
+        android:layout_width="196dp"
+        android:layout_height="50dp"
+        android:background="#28828387"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:text="Payment"
+        android:textAlignment="center"
+        android:textColor="#E13528"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav5"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_ticketnav"
+        android:layout_width="195dp"
+        android:layout_height="53dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:text="Ticket"
+        android:textAlignment="center"
+        android:textColor="#E13528"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav5"
+        android:gravity="center_horizontal" />
+
+    <ImageView
+        android:id="@+id/img_visacard"
+        android:layout_width="202dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_paymentnav"
+        app:srcCompat="@drawable/img_realvisa" />
+
+    <ImageView
+        android:id="@+id/img_master"
+        android:layout_width="178dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toEndOf="@+id/img_visacard"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ticketnav"
+        app:srcCompat="@drawable/img_realmaster" />
+
+    <TextView
+        android:id="@+id/tv_checkout"
+        android:layout_width="361dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#28828387"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="CHECKOUT"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_visacard"
+        android:layout_marginLeft="16dp" />
+
+
+    <LinearLayout
+        android:layout_width="189dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_checkout"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/Mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Mid"
+            android:textColor="#000"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="317dp" />
+
+        <TextView
+            android:id="@+id/Mname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Mname"
+            android:textColor="#000"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="349dp" />
+
+        <TextView
+            android:id="@+id/Noofseats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Nofseats"
+            android:textColor="#000"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="371dp" />
+
+        <TextView
+            android:id="@+id/Showdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Showdate"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="399dp" />
+
+        <TextView
+            android:id="@+id/Tprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Tprice"
+            android:textColor="#000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="399dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="526dp" />
+
+    <Button
+        android:id="@+id/btn_paynow"
+        android:layout_width="350dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="132dp"
+        android:text="Pay Now"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:background="@android:color/white"
+        app:backgroundTint="@android:color/background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
