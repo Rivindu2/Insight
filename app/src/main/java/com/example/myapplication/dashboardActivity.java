@@ -23,7 +23,7 @@ public class dashboardActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
 
-    TextView textView,verifyMsg,textView2;
+    TextView textView,verifyMsg,textView2,feedbackView;
 
 
     @Override
@@ -41,6 +41,19 @@ public class dashboardActivity extends AppCompatActivity {
 
             }
         });
+        feedbackView=(TextView)findViewById(R.id.textView8);
+
+        feedbackView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(dashboardActivity.this,feedbackActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
 
 
 
