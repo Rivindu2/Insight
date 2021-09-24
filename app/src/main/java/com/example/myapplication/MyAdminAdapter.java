@@ -55,11 +55,11 @@ public class MyAdminAdapter extends RecyclerView.Adapter<MyAdminAdapter.MyViewHo
             }
         });
     }
-private void notifyRemoved(int position){
+    private void notifyRemoved(int position){
         mlist.remove(position);
         notifyRemoved(position);
         activity.showData();
-}
+    }
 
 
 

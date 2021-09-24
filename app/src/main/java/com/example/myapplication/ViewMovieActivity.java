@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -48,6 +49,7 @@ public class ViewMovieActivity extends AppCompatActivity {
     }
     public void  showData(){//fetch data for instance of collection
         db.collection("MovieDocuments").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 list.clear();
