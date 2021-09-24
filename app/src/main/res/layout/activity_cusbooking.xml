@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCardActivity">
+
+
+    <View
+        android:id="@+id/v_nav3"
+        android:layout_width="414dp"
+        android:layout_height="61dp"
+        android:background="#0844A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="85dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="12dp"
+        android:text="LOGOUT"
+
+        android:textColor="#C8FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/v_nav3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/v_nav3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
+    <TextView
+        android:id="@+id/bheader"
+        android:layout_width="128dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:text="Booking Here"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav3" />
+
+    <Button
+        android:id="@+id/btn10"
+        android:layout_width="365dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="84dp"
+        android:background="#0844A4"
+        android:text="Add Card &amp; Save"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#0844A4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textView14"
+        android:layout_width="281dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Mid :"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bheader" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textView15"
+        android:layout_width="281dp"
+        android:layout_height="55dp"
+        android:hint="Enter Mname :"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textView16"
+        android:layout_width="281dp"
+        android:layout_height="55dp"
+        android:hint="Enter No of Seats : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textView17"
+        android:layout_width="281dp"
+        android:layout_height="55dp"
+        android:hint="Enter date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textView18"
+        android:layout_width="281dp"
+        android:layout_height="55dp"
+        android:hint="Tprice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

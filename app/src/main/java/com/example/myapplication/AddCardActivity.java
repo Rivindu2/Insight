@@ -20,7 +20,7 @@ import java.util.UUID;
 
 public class AddCardActivity extends AppCompatActivity {
     private TextInputEditText input1 , input2 , input3 , input4;//Chamath
-    private Button SBtn , VBtn;//Chamath
+    private Button SBtn , VBtn , CBtn;//Chamath
     private FirebaseFirestore db;
     private String uInput1, uInput2, uInput3, uInput4, uId;
 
@@ -35,6 +35,7 @@ public class AddCardActivity extends AppCompatActivity {
         input4=findViewById(R.id.textInputEditText4);
         SBtn=findViewById(R.id.btn_card_save);
         VBtn=findViewById(R.id.btn_view);
+        CBtn=findViewById(R.id.btn_continue);
 
         db = FirebaseFirestore.getInstance();
 
@@ -63,6 +64,13 @@ public class AddCardActivity extends AppCompatActivity {
             }
         });
 
+        CBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddCardActivity.this , CheckingPageActivity.class));
+            }
+        });
+
         SBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,11 +90,8 @@ public class AddCardActivity extends AppCompatActivity {
                     saveToFireStore(id , Input1 , Input2 , Input3 , Input4);
                 }
 
-
             }
         });
-
-
     }
 
     private void updateToFireStore(String id, String Input1, String Input2, String Input3, String Input4){
@@ -134,7 +139,8 @@ public class AddCardActivity extends AppCompatActivity {
 
         }else
             Toast.makeText(this, "Empty Fields not Allowed", Toast.LENGTH_SHORT).show();
-
     }
-
 }
+
+
+

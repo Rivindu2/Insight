@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class selectPayActivity extends AppCompatActivity {
 
-    private Button button;
+    private Button button , btnC;
     RadioGroup radioGroup;
     RadioButton radioButton;
     TextView textView;
@@ -24,6 +24,15 @@ public class selectPayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pay);
+
+        btnC=findViewById(R.id.btn_c);
+
+        btnC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(selectPayActivity.this , CheckingPageActivity.class));
+            }
+        });
 
         button = (Button) findViewById(R.id.btn_addcard);
         button.setOnClickListener(new View.OnClickListener() {

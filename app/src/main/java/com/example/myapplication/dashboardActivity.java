@@ -31,6 +31,17 @@ public class dashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        textView=(TextView)findViewById(R.id.textView7);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(dashboardActivity.this,Cusbooking.class);
+                startActivity(intent);
+
+            }
+        });
+
         textView=(TextView)findViewById(R.id.textView10);
 
         textView.setOnClickListener(new View.OnClickListener() {

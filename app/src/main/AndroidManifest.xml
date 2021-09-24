@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Cusbooking"
+            android:exported="true" />
+        <activity
+            android:name=".CheckingPageActivity"
+            android:exported="true" />
+        <activity
             android:name=".DisplayfirstActivity"
             android:exported="true" />
         <activity
