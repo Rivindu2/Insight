@@ -62,9 +62,9 @@
         android:id="@+id/btn10"
         android:layout_width="365dp"
         android:layout_height="52dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="8dp"
         android:background="#0844A4"
-        android:text="Add Card &amp; Save"
+        android:text="Book Now"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -78,20 +78,19 @@
         android:id="@+id/textView14"
         android:layout_width="281dp"
         android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:hint="Enter Mid :"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bheader" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textView15"
         android:layout_width="281dp"
         android:layout_height="55dp"
+        android:layout_marginTop="12dp"
         android:hint="Enter Mname :"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -99,9 +98,9 @@
         android:id="@+id/textView16"
         android:layout_width="281dp"
         android:layout_height="55dp"
+        android:layout_marginTop="20dp"
         android:hint="Enter No of Seats : "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
@@ -109,9 +108,9 @@
         android:id="@+id/textView17"
         android:layout_width="281dp"
         android:layout_height="55dp"
+        android:layout_marginTop="4dp"
         android:hint="Enter date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -119,11 +118,21 @@
         android:id="@+id/textView18"
         android:layout_width="281dp"
         android:layout_height="55dp"
+        android:layout_marginTop="8dp"
         android:hint="Tprice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="361dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bheader"
+        app:srcCompat="@drawable/book" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

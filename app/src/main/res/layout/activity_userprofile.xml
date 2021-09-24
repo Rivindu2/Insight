@@ -32,6 +32,20 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
+    <TextView
+        android:id="@+id/tv_logout3"
+        android:layout_width="162dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="12dp"
+        android:onClick="logout"
+        android:text="LOGOUT"
+        android:textColor="#C8FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+
     <ImageView
         android:id="@+id/profileImageView"
         android:layout_width="131dp"
@@ -63,30 +77,39 @@
         android:layout_height="55dp"
         android:layout_marginTop="52dp"
         android:text="Your Name"
+        android:textColor="#5D3FD3"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="310dp"
         android:layout_height="54dp"
         android:text="Your Email Address"
+        android:textAlignment="center"
+        android:textColor="#5D3FD3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="310dp"
         android:layout_height="52dp"
         android:text="Phone Number"
+        android:textColor="#5D3FD3"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:gravity="center_horizontal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
