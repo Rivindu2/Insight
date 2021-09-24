@@ -31,8 +31,6 @@ public class TouchSlide extends ItemTouchHelper.SimpleCallback  {
             adapter.notifyDataSetChanged();
         }else{
             adapter.deleteMovie(position);
-
-
         }
 
     }
