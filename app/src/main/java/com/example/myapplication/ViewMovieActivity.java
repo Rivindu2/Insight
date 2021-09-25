@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,12 +29,21 @@ public class ViewMovieActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private MyAdminAdapter adapter;
     private List<AdminModel> list;
+    private Button addbutton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_movie);
+
+        addbutton=findViewById(R.id.add);
+        addbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ViewMovieActivity.this,AddmovieActivity.class));
+            }
+        });
 
         recyclerView=findViewById(R.id.mrecyclerView);
         recyclerView.setHasFixedSize(true);
