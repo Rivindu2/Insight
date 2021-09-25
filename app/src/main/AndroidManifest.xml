@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".feedbackActivity"
+            android:exported="true" />
+        <activity
+            android:name=".showfeedActivity"
+            android:exported="true" />
+        <activity
             android:name=".Cusbooking"
             android:exported="true" />
         <activity
