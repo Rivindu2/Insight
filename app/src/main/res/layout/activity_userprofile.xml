@@ -61,55 +61,66 @@
         android:layout_width="206dp"
         android:layout_height="33dp"
         android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
         android:text="Your Profile"
+        android:textAlignment="center"
         android:textColor="@color/blue_shade_2"
         android:textSize="20dp"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileImageView"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:layout_marginTop="52dp"
+        android:gravity="center_horizontal"
         android:text="Your Name"
-        android:textColor="#5D3FD3"
         android:textAlignment="center"
+        android:textColor="#5D3FD3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="310dp"
         android:layout_height="54dp"
+        android:gravity="center_horizontal"
         android:text="Your Email Address"
         android:textAlignment="center"
         android:textColor="#5D3FD3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="310dp"
         android:layout_height="52dp"
+        android:gravity="center_horizontal"
         android:text="Phone Number"
-        android:textColor="#5D3FD3"
         android:textAlignment="center"
+        android:textColor="#5D3FD3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="312dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="48dp"
+        android:text="Change Profile Picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
