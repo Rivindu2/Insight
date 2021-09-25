@@ -1,12 +1,18 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -14,6 +20,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.UUID;
 
 public class CheckingPageActivity extends AppCompatActivity {
     TextView Mid , Mname , Noofseats , Showdate , Tprice;
@@ -23,6 +34,7 @@ public class CheckingPageActivity extends AppCompatActivity {
     String userId;
     String bid;
     FirebaseUser user;
+
     DocumentReference documentReference;
 
     @Override
@@ -40,8 +52,11 @@ public class CheckingPageActivity extends AppCompatActivity {
 
         userId = fAuth.getCurrentUser().getUid();
 
+        String id = UUID.randomUUID().toString();
 
-        documentReference = fStore.collection("users").document(userId).collection("BookingInfo").document("tXdi9wUWnLmXNOQ6nTrE");
+
+
+       documentReference = fStore.collection("users").document(userId).collection("BookingInfo").document("");
         documentReference.addSnapshotListener(CheckingPageActivity.this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -59,4 +74,6 @@ public class CheckingPageActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
