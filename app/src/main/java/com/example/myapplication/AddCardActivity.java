@@ -120,6 +120,7 @@ public class AddCardActivity extends AppCompatActivity {
     }
 
     private void saveToFireStore(String id, String Input1, String Input2, String Input3, String Input4) {
+
         if (!Input1.isEmpty() && !Input2.isEmpty() && !Input3.isEmpty() && !Input4.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();
             map.put("id" , id);

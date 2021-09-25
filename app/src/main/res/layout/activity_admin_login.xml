@@ -61,10 +61,11 @@
     <EditText
         android:id="@+id/adminpass"
         android:layout_width="381dp"
-        android:layout_height="53dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="356dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="132dp"
         android:background="@android:color/transparent"
         android:ems="10"
         android:fontFamily="sans-serif"
@@ -75,9 +76,10 @@
         android:textColorHint="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/goback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/AloginBtn"
@@ -86,11 +88,24 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif"
         android:background="@color/blue_shade_1"
+        android:fontFamily="sans-serif"
         android:text="Login"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminpass" />
+
+    <TextView
+        android:id="@+id/goback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="171dp"
+        android:text="Go back? ?"
+        android:textColor="#FDD835"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adminpass" />
