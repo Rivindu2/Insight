@@ -10,7 +10,7 @@ SLIIT 2nd Year 2nd Semester Mobile Application Development (MAD) Mini Project
 | Lanuage - JAVA | Database - FireBase | IDE - Android Studio | Integrate Technology Service - Github
 
 Team
-K.O.R.P.Karunanayake
-Muthuni Suwanthi S. D
-S.A.C.H.Senadeera
+K.O.R.P.Karunanayake,
+Muthuni Suwanthi S. D,
+S.A.C.H.Senadeera,
 Warnakulasuriya M.A.N.H
