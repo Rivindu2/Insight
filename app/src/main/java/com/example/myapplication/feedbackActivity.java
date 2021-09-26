@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -24,6 +25,9 @@ public class feedbackActivity extends AppCompatActivity {
     private Button mSavefeed,mShowfeed;
     private FirebaseFirestore db;
     private String uID,uName,uFeedback;
+    String userId;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class feedbackActivity extends AppCompatActivity {
         mSavefeed=findViewById(R.id.save_btn);
         mShowfeed=findViewById(R.id.showfeed_btn);
 
+        fAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         Bundle bundle = getIntent().getExtras();
@@ -76,7 +81,8 @@ public class feedbackActivity extends AppCompatActivity {
         });
     }
     private void updateToFireStore(String id ,String Name ,String Feedback){
-        db.collection("Feedback_details").document(id).update("Name",Name,"Feedback",Feedback)
+        userId = fAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).collection("FeedBackD").document(id).update("Name",Name,"Feedback",Feedback)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -101,9 +107,10 @@ public class feedbackActivity extends AppCompatActivity {
             map.put("id" , id);
             map.put("Name" , Name);
             map.put("Feedback" , Feedback);
+            userId = fAuth.getCurrentUser().getUid();
 
 
-            db.collection("Feedback_details").document(id).set(map)
+            db.collection("users").document(userId).collection("FeedBackD").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

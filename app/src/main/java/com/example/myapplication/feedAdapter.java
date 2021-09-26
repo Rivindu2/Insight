@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
@@ -21,6 +22,10 @@ public class feedAdapter  extends RecyclerView.Adapter<feedAdapter.MyViewHolder>
     private showfeedActivity activity;
     private List<feedModel> mlist;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    String userId;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
 
     public feedAdapter (showfeedActivity activity,List<feedModel> mlist){
         this.activity=activity;
@@ -38,8 +43,10 @@ public class feedAdapter  extends RecyclerView.Adapter<feedAdapter.MyViewHolder>
         activity.startActivity(intent);
     }
     public void deleteData(int position){
+        fAuth = FirebaseAuth.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
         feedModel item = mlist.get(position);
-        db.collection("Feedback_details").document(item.getId()).delete()
+        db.collection("users").document(userId).collection("FeedBackD").document(item.getId()).delete()
             .addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {

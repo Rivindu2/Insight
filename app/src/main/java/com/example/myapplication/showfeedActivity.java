@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -24,6 +25,9 @@ public class showfeedActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private feedAdapter adapter;
     private List<feedModel> list;
+    String userId;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,7 @@ public class showfeedActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        fAuth = FirebaseAuth.getInstance();
         db= FirebaseFirestore.getInstance();
         list= new ArrayList<>();
         adapter=new feedAdapter(this,list);
@@ -44,7 +49,8 @@ public class showfeedActivity extends AppCompatActivity {
         showData();
     }
     public void showData(){
-        db.collection("Feedback_details").get()
+        userId = fAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).collection("FeedBackD").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {

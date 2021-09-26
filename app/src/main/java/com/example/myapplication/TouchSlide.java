@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Color;
 
@@ -23,6 +24,7 @@ public class TouchSlide extends ItemTouchHelper.SimpleCallback  {
         return false;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         final int position=viewHolder.getAdapterPosition();
