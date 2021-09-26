@@ -72,7 +72,7 @@ public class dashboardActivity extends AppCompatActivity {
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {//select pay activity
                 Intent intent=new Intent(dashboardActivity.this,selectPayActivity.class);
                 startActivity(intent);
 
