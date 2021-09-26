@@ -56,7 +56,7 @@ public class CheckingPageActivity extends AppCompatActivity {
 
 
 
-       documentReference = fStore.collection("users").document(userId).collection("BookingInfo").document("");
+       documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(CheckingPageActivity.this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
