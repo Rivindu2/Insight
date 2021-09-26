@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="20dp">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="0dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mid"
+            android:textSize="16sp"
+            android:textColor="@color/blue_shade_1"
+            android:padding="3dp"
+            android:id="@+id/midview"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mname"
+            android:textSize="16sp"
+            android:textColor="@color/blue_shade_1"
+            android:padding="3dp"
+            android:id="@+id/mnameview"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="noofseats"
+            android:textSize="16sp"
+            android:textColor="@color/blue_shade_1"
+            android:padding="3dp"
+            android:id="@+id/noofseatsview"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="showdate"
+            android:textSize="16sp"
+            android:textColor="@color/blue_shade_1"
+            android:padding="3dp"
+            android:id="@+id/showdateview"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tprice"
+            android:textSize="16sp"
+            android:textColor="@color/blue_shade_1"
+            android:padding="3dp"
+            android:id="@+id/tpriceview"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

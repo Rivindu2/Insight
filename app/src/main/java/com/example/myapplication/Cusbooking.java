@@ -3,6 +3,8 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,11 +23,11 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class Cusbooking extends AppCompatActivity {
-    private TextInputEditText Mid , Mname , Noofseats , Showdate;//Chamath
+    private TextInputEditText Mid , Mname , Noofseats , Showdate;
     private TextView Tprice;
-    private Button EBtn;//Chamath
+    private Button EBtn , EVBtn;
     private FirebaseFirestore db;
-    private String uInput1, uInput2, uInput3, uInput4, uId;
+    private String uMid, uMname, uNoofseats, uShowdate, uTprice, uId;
     String userId;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -42,16 +44,42 @@ public class Cusbooking extends AppCompatActivity {
         Showdate=findViewById(R.id.textView23);
         Tprice=findViewById(R.id.textView24);
         EBtn=findViewById(R.id.btn10);
+        EVBtn=findViewById(R.id.button3);
 
 
         fAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle !=null){
+             EBtn.setText("Update Booking");
+             uMid = bundle.getString("uMid");
+             uId = bundle.getString("uId");
+             uMname = bundle.getString("uMname");
+             uNoofseats = bundle.getString("uNoofseats");
+             uShowdate = bundle.getString("uShowdate");
+             uTprice = bundle.getString("uTprice");
+             Mid.setText(uMid);
+             Mname.setText(uMname);
+             Noofseats.setText(uNoofseats);
+             Showdate.setText(uShowdate);
+             Tprice.setText(uTprice);
+        }else {
+            EBtn.setText("Save");
+        }
+
+        EVBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Cusbooking.this , ShowbookingActivity.class));
+            }
+        });
+
         EBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 float addition=Integer.parseInt(Noofseats.getText().toString());
-                float tprice = addition * 500;
+                String tprice = String.valueOf(addition * 500);
                 String mid = Mid.getText().toString();
                 String mname = Mname.getText().toString();
                 String noofseats = Noofseats.getText().toString();
@@ -61,7 +89,7 @@ public class Cusbooking extends AppCompatActivity {
                 Bundle bundle1 = getIntent().getExtras();
                 if (bundle1 !=null){
                     String id = uId;
-                    /*updateToFireStore(id , mid , mname , noofseats , showdate , tprice);*/
+                    updateToFireStore(id , mid , mname , noofseats , showdate , tprice);
 
                 }else{
                     String id = UUID.randomUUID().toString();
@@ -74,7 +102,27 @@ public class Cusbooking extends AppCompatActivity {
 
     }
 
-    private void saveToFireStore(String id, String mid, String mname, String noofseats, String showdate, float tprice) {
+    private void updateToFireStore(String id, String mid, String mname, String noofseats, String showdate, String tprice){
+        userId = fAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).collection("BookingInfo").document(id).update("mid" , mid , "mname" , mname , "noofseats" , noofseats , "showdate" , showdate , "tprice" , tprice)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(Cusbooking.this, "Data Updated!!!", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(Cusbooking.this, "Error : " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Cusbooking.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void saveToFireStore(String id, String mid, String mname, String noofseats, String showdate, String tprice) {
         if (!mid.isEmpty() && !mname.isEmpty() && !noofseats.isEmpty() && !showdate.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();
             map.put("id" , id);
