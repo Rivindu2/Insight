@@ -36,7 +36,7 @@ public class AddmovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addmovie);
         //Notification
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){//notification for chanel
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){//notification for chanel////for notification
             NotificationChannel channel= new NotificationChannel("AdminNotification","AdminNotification", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager= getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
