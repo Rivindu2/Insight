@@ -2,8 +2,13 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +35,15 @@ public class AddmovieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addmovie);
+        //Notification
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){//notification for chanel
+            NotificationChannel channel= new NotificationChannel("AdminNotification","AdminNotification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager= getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+
+        }
+
+
 
         movieName=(EditText)findViewById(R.id.idMovieNameEdt);
         movieCat=(EditText)findViewById(R.id.idMovieCatEdt);
@@ -94,7 +108,7 @@ public class AddmovieActivity extends AppCompatActivity {
     }
     private void updatetoFirestore(String id,String name,String cat,String duration){
         if(movieName.length()>=2 && movieCat.length()>=4 && movieDuration.length()>0) {
-            float division=Integer.parseInt(duration);
+            float division=Float.parseFloat(duration);
             float s=division/60;
             String du=String.valueOf(s);
             db.collection("MovieDocuments").document(id).update("name", name, "cat", cat, "duration", du)
@@ -106,6 +120,14 @@ public class AddmovieActivity extends AppCompatActivity {
                                 movieName.setText("");
                                 movieCat.setText("");
                                 movieDuration.setText("");
+                                NotificationCompat.Builder builder=new NotificationCompat.Builder(AddmovieActivity.this,"AdminNotification");
+                                builder.setContentTitle("Insight Admin Movie Updated");
+                                builder.setContentText(name);
+                                builder.setSmallIcon(R.drawable.ic_baseline_notifications_24);
+                                builder.setAutoCancel(true);
+
+                                NotificationManagerCompat managerCompat=NotificationManagerCompat.from(AddmovieActivity.this);
+                                managerCompat.notify(1,builder.build());
                             } else {
                                 Toast.makeText(AddmovieActivity.this, "Error", Toast.LENGTH_SHORT).show();
                             }
@@ -126,7 +148,7 @@ public class AddmovieActivity extends AppCompatActivity {
     private void saveToFireStore(String id,String name,String cat,String duration){///to save to firestore
 
     if(movieName.length()>=2 && movieCat.length()>=4 && movieDuration.length()>0) {
-        float division=Integer.parseInt(duration);
+        float division=Float.parseFloat(duration);
         float s=division/60;
         String du=String.valueOf(s);
             HashMap<String, Object> map = new HashMap<>();
@@ -144,6 +166,15 @@ public class AddmovieActivity extends AppCompatActivity {
                                 movieName.setText("");
                                 movieCat.setText("");
                                 movieDuration.setText("");
+                                NotificationCompat.Builder builder=new NotificationCompat.Builder(AddmovieActivity.this,"AdminNotification");
+                                builder.setContentTitle("Insight Admin Movie Added");
+                                builder.setContentText(name);
+                                builder.setSmallIcon(R.drawable.ic_baseline_notifications_24);
+                                builder.setAutoCancel(true);
+
+                                NotificationManagerCompat managerCompat=NotificationManagerCompat.from(AddmovieActivity.this);
+                                managerCompat.notify(1,builder.build());
+
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
