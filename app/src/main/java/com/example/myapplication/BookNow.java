@@ -129,25 +129,46 @@ public class BookNow extends AppCompatActivity {
         bookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String title=name.getText().toString();
-                String date=getDate.getText().toString();
-                String seatsNo=seatNo.getText().toString();
-                String id= UUID.randomUUID().toString();
+                String title = name.getText().toString();
+                String date = getDate.getText().toString();
+                String seatsNo = seatNo.getText().toString();
+                String id = UUID.randomUUID().toString();
 
-                saveToFireStore(id, title, date, seatsNo);
+
+                if (isNumber(seatsNo)) {
+                    int seatCalc = Integer.parseInt(seatsNo);
+                    int Total = seatCalc * 500;
+                    saveToFireStore(id, title, date, seatCalc, Total);
+
+                } else {
+                    Toast.makeText(BookNow.this, "Only Numbers are allowed!!!", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
+
+
+    }
+    public static boolean isNumber(String in){
+
+        try{
+            Integer.parseInt(in);
+            return true;
+        }catch(Exception E){
+            return false;
+        }
     }
 
-    private void saveToFireStore(String id, String mName, String bookDate, String seatNo){
-        if(!mName.isEmpty() && !bookDate.isEmpty() && !seatNo.isEmpty()){
+    private void saveToFireStore(String id, String mName, String bookDate, int seatNo, int Total){
+        if(!mName.isEmpty() && !bookDate.isEmpty() && seatNo!=0 && Total!=0){
 
             HashMap<String , Object>map=new HashMap<>();
             map.put("id", id);
             map.put("movieName", mName);
             map.put("bookDate", bookDate);
             map.put("No_Of_Seats", seatNo);
+            map.put("Total", Total);
 
             userId=fAuth.getCurrentUser().getUid();
 
@@ -165,7 +186,7 @@ public class BookNow extends AppCompatActivity {
             });
         }else{
 
-            Toast.makeText(this,"PlEASE SELECT BOOKING DETAILS PROPERLY... ", Toast.LENGTH_SHORT);
+            Toast.makeText(this,"PlEASE SELECT BOOKING DETAILS PROPERLY... ", Toast.LENGTH_LONG).show();
         }
     }
 
