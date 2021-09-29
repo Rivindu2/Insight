@@ -58,6 +58,11 @@
             android:name=".AddmovieActivity"
             android:exported="true" />
         <activity
+            android:name=".HomeActivity"
+            android:exported="true"/>
+        <activity android:name=".BookNow"
+            android:exported="true"/>c
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

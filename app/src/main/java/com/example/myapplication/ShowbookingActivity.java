@@ -57,6 +57,7 @@ public class ShowbookingActivity extends AppCompatActivity {
     public void showData(){
         userId = fAuth.getCurrentUser().getUid();
 
+
         db.collection("users").document(userId).collection("BookingInfo").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @SuppressLint("NotifyDataSetChanged")
