@@ -10,4 +10,8 @@
     <color name="blue_shade_1">#000066</color>
     <color name="blue_shade_2">#000080</color>
     <color name="mtrl_textinput_defualt_box_stroke_colour" tools:overrise="true">#296D98</color>
+
+    <!--Alert Dialog Demo Colors-->
+    <color name="colorPrimaryDemo">#6495ED</color>
+    <color name="colorSecondaryDemo">#FF6663</color>
 </resources>

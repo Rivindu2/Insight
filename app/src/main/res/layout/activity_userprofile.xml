@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserprofileActivity">
+    tools:context=".UserprofileActivity"
+    android:background="@drawable/backdp1">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -60,7 +61,7 @@
         android:id="@+id/textView5"
         android:layout_width="206dp"
         android:layout_height="33dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="60dp"
         android:gravity="center_horizontal"
         android:text="Your Profile"
         android:textAlignment="center"
@@ -75,13 +76,13 @@
         android:id="@+id/textView6"
         android:layout_width="310dp"
         android:layout_height="55dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:text="Your Name"
         android:textAlignment="center"
         android:textColor="#5D3FD3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -113,12 +114,26 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="312dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="139dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#FF6347"
         android:text="Change Profile Picture"
+        android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Go Back ?"
+        android:textSize="13dp"
+        android:textColor="#FFBF00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
