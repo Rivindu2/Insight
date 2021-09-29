@@ -35,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
+    TextView goback2;
 
 
     @Override
@@ -52,6 +53,17 @@ public class RegisterActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
+
+        goback2 = findViewById(R.id.textView26);
+
+        goback2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(RegisterActivity.this,DisplayfirstActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         if (fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),dashboardActivity.class));
