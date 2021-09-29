@@ -33,7 +33,7 @@ public class BookNow extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener setListener;
     movieDetailsAdapter mAdapter;
     ProgressDialog progressDialog;
-    Button bookBtn;
+    Button bookBtn, bookDetailsBtn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -148,7 +148,19 @@ public class BookNow extends AppCompatActivity {
         });
 
 
+        bookDetailsBtn=findViewById(R.id.viewBookBtn);
+        bookDetailsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewBookDetails();
+            }
+        });
 
+    }
+
+    public void viewBookDetails(){
+        Intent intent= new Intent(this, BookDetails.class);
+        startActivity(intent);
     }
     public static boolean isNumber(String in){
 

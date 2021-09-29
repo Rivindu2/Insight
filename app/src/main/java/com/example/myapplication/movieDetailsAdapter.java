@@ -2,7 +2,6 @@ package com.example.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +27,6 @@ public class movieDetailsAdapter extends RecyclerView.Adapter<movieDetailsAdapte
     public movieDetailsAdapter(Context context, ArrayList<movieDetailsModel> movieDetailsModelArrayList) {
         this.context = context;
         this.movieDetailsModelArrayList = movieDetailsModelArrayList;
-
-
     }
 
     @NonNull
@@ -57,13 +53,13 @@ public class movieDetailsAdapter extends RecyclerView.Adapter<movieDetailsAdapte
 
     public  class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name, cat, duration ,show_start_date;
+        TextView name, cat, duration ;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name=itemView.findViewById(R.id.name);
-            cat=itemView.findViewById(R.id.cat);
+            name=itemView.findViewById(R.id.mName);
+            cat=itemView.findViewById(R.id.category);
             duration=itemView.findViewById(R.id.duration);
 
             itemView.setOnClickListener(new OnClickListener(){

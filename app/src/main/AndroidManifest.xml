@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".BookDetails"
+            android:exported="true" />
+        <activity
             android:name=".ShowbookingActivity"
             android:exported="true" />
         <activity
@@ -59,9 +62,10 @@
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true"/>
-        <activity android:name=".BookNow"
-            android:exported="true"/>c
+            android:exported="true" />
+        <activity
+            android:name=".BookNow"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
