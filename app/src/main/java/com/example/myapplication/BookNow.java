@@ -28,7 +28,7 @@ import java.util.UUID;
 
 public class BookNow extends AppCompatActivity {
 
-    TextView name, cat, duration, tvDate;
+    TextView name, cat, duration, tvDate;//Field names
     EditText etDate, getDate, seatNo;
     DatePickerDialog.OnDateSetListener setListener;
     movieDetailsAdapter mAdapter;
