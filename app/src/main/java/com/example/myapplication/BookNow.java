@@ -28,7 +28,7 @@ import java.util.UUID;
 
 public class BookNow extends AppCompatActivity {
 
-    TextView name, cat, duration, tvDate;//Field names
+    TextView name, cat, duration, dash;//Field names
     EditText etDate, getDate, seatNo;
     DatePickerDialog.OnDateSetListener setListener;
     movieDetailsAdapter mAdapter;
@@ -56,6 +56,17 @@ public class BookNow extends AppCompatActivity {
         bookBtn=findViewById(R.id.bookButton);
         getDate=findViewById(R.id.et_date);
         seatNo=findViewById(R.id.noOfSeats);
+        dash=findViewById(R.id.tv_topic2);
+
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(BookNow.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         Intent i=getIntent();
         String Name=i.getStringExtra("name");

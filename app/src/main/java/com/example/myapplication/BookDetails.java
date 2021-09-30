@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,12 +33,22 @@ public class BookDetails extends AppCompatActivity {
     private FirebaseFirestore db;
     private bookDetailsAdapter bAdapter;
     private String userId;
+    TextView dash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_details);
 
+        dash=findViewById(R.id.tv_topic2);
 
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(BookDetails.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading Tickets");
