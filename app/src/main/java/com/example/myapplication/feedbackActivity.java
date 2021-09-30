@@ -2,10 +2,16 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +20,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -24,6 +31,13 @@ public class feedbackActivity extends AppCompatActivity {
     private Button mSavefeed,mShowfeed;
     private FirebaseFirestore db;
     private String uID,uName,uFeedback;
+    String userId;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +49,13 @@ public class feedbackActivity extends AppCompatActivity {
         mSavefeed=findViewById(R.id.save_btn);
         mShowfeed=findViewById(R.id.showfeed_btn);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("My Feedback","My Feedback",NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        fAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         Bundle bundle = getIntent().getExtras();
@@ -59,8 +80,27 @@ public class feedbackActivity extends AppCompatActivity {
         mSavefeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(feedbackActivity.this,"My Feedback");
+                builder.setContentTitle("My Feedback");
+                builder.setContentText("Thank you for Your Valuble Feedback");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(feedbackActivity.this);
+                managerCompat.notify(1, builder.build());
+
                 String Name = mName.getText().toString();
                 String Feedback = mFeedback.getText().toString();
+
+                if (TextUtils.isEmpty(Name)){
+                    mName.setError("Name is required.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(Feedback)){
+                    mFeedback.setError("Feedback is required.");
+                    return;
+                }
 
                 Bundle bundle1 = getIntent().getExtras();
                 if (bundle1 != null){
@@ -76,7 +116,8 @@ public class feedbackActivity extends AppCompatActivity {
         });
     }
     private void updateToFireStore(String id ,String Name ,String Feedback){
-        db.collection("Feedback_details").document(id).update("Name",Name,"Feedback",Feedback)
+        userId = fAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).collection("FeedBackD").document(id).update("Name",Name,"Feedback",Feedback)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -101,9 +142,10 @@ public class feedbackActivity extends AppCompatActivity {
             map.put("id" , id);
             map.put("Name" , Name);
             map.put("Feedback" , Feedback);
+            userId = fAuth.getCurrentUser().getUid();
 
 
-            db.collection("Feedback_details").document(id).set(map)
+            db.collection("users").document(userId).collection("FeedBackD").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
