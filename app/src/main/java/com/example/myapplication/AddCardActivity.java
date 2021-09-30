@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,7 @@ import java.util.UUID;
 
 public class AddCardActivity extends AppCompatActivity {
     private TextInputEditText input1 , input2 , input3 , input4;//Chamath
+    TextView dash;
     private Button SBtn , VBtn , CBtn;//Chamath
     private FirebaseFirestore db;
     private String uInput1, uInput2, uInput3, uInput4, uId;
@@ -51,7 +53,17 @@ public class AddCardActivity extends AppCompatActivity {
         input4=findViewById(R.id.textInputEditText4);
         SBtn=findViewById(R.id.btn_card_save);
         VBtn=findViewById(R.id.btn_view);
-        CBtn=findViewById(R.id.btn_continue);
+        dash=findViewById(R.id.tv_topic);
+
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AddCardActivity.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         mDisplayDate=(ImageView) findViewById(R.id.ic_calender);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -107,12 +119,7 @@ public class AddCardActivity extends AppCompatActivity {
             }
         });
 
-        CBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AddCardActivity.this , CheckingPageActivity.class));
-            }
-        });
+
 
         SBtn.setOnClickListener(new View.OnClickListener() {
             @Override

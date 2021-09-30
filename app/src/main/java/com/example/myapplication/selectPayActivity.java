@@ -18,21 +18,26 @@ public class selectPayActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     TextView textView;
+    TextView dash;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pay);
+        dash=findViewById(R.id.tv_topic);
 
-        btnC=findViewById(R.id.btn_c);
-
-        btnC.setOnClickListener(new View.OnClickListener() {
+        dash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(selectPayActivity.this , CheckingPageActivity.class));
+                Intent intent=new Intent(selectPayActivity.this,dashboardActivity.class);
+                startActivity(intent);
+
             }
         });
+
+
+
 
         button = (Button) findViewById(R.id.btn_addcard);
         button.setOnClickListener(new View.OnClickListener() {

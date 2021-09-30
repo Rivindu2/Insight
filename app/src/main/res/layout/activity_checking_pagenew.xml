@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckingPagenewActivity">
+
+  <View
+      android:id="@+id/v_nav5"
+      android:layout_width="411dp"
+      android:layout_height="64dp"
+      android:background="#0844A4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/tv_topic"
+      android:layout_width="105dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="56dp"
+      android:layout_marginLeft="56dp"
+      android:layout_marginTop="16dp"
+      android:text="INSIGHT"
+      android:textColor="#FFFFFF"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/v_nav5" />
+
+  <TextView
+      android:id="@+id/tv_logout"
+      android:layout_width="91dp"
+      android:layout_height="33dp"
+      android:layout_marginStart="88dp"
+      android:layout_marginTop="16dp"
+      android:text="LOGOUT"
+      android:textColor="#C9FFFFFF"
+      android:textSize="18sp"
+      app:layout_constraintStart_toEndOf="@+id/tv_topic"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginLeft="88dp" />
+
+  <TextView
+      android:id="@+id/textView27"
+      android:layout_width="260dp"
+      android:layout_height="30dp"
+      android:layout_marginTop="10dp"
+      android:background="#6495ED"
+      android:gravity="center_horizontal"
+      android:text="TextView"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_checkout" />
+
+  <TextView
+      android:id="@+id/textView28"
+      android:layout_width="260dp"
+      android:layout_height="29dp"
+      android:background="#6495ED"
+      android:gravity="center_horizontal"
+      android:text="TextView"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+  <TextView
+      android:id="@+id/textView29"
+      android:layout_width="260dp"
+      android:layout_height="30dp"
+      android:background="#6495ED"
+      android:gravity="center_horizontal"
+
+      android:text="TextView"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+  <TextView
+      android:id="@+id/textView30"
+      android:layout_width="260dp"
+      android:layout_height="34dp"
+      android:background="#6495ED"
+      android:gravity="center_horizontal"
+
+      android:text="TextView"
+      android:textAlignment="center"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+  <LinearLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="189dp"
+      android:layout_height="144dp"
+      android:layout_marginTop="50dp"
+      android:layout_marginEnd="12dp"
+      android:layout_marginRight="12dp"
+
+      android:orientation="vertical"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView30"
+      tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/Mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="Mid"
+        android:textColor="#000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="317dp" />
+
+    <TextView
+        android:id="@+id/Mname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="Mname"
+        android:textColor="#000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <TextView
+        android:id="@+id/Noofseats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="Nofseats"
+        android:textColor="#000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="371dp" />
+
+    <TextView
+        android:id="@+id/Showdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="Showdate"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <TextView
+        android:id="@+id/Tprice"
+        android:layout_width="195dp"
+        android:layout_height="36dp"
+        android:padding="3dp"
+        android:text="Tprice"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/btn_paynow"
+      android:layout_width="350dp"
+      android:layout_height="49dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/button_background_success"
+      android:text="Pay Now"
+      android:textColor="@color/black"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.379"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+  <ImageView
+      android:id="@+id/imageView10"
+      android:layout_width="173dp"
+      android:layout_height="75dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginLeft="24dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/v_nav5"
+      app:srcCompat="@drawable/img_realmaster" />
+
+  <ImageView
+      android:id="@+id/imageView11"
+      android:layout_width="158dp"
+      android:layout_height="76dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:layout_marginRight="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.625"
+      app:layout_constraintStart_toEndOf="@+id/imageView10"
+      app:layout_constraintTop_toBottomOf="@+id/v_nav5"
+      app:srcCompat="@drawable/img_realvisa" />
+
+  <TextView
+      android:id="@+id/tv_checkout"
+      android:layout_width="361dp"
+      android:layout_height="41dp"
+      android:layout_marginTop="8dp"
+      android:background="#28828387"
+      android:paddingLeft="10dp"
+      android:paddingTop="5dp"
+      android:text="CHECKOUT CARD INFO"
+      android:textColor="#3F51B5"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.54"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+  <TextView
+      android:id="@+id/textView16"
+      android:layout_width="175dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginLeft="30dp"
+      android:layout_marginTop="50dp"
+      android:text="MID :"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+  <TextView
+      android:id="@+id/textView17"
+      android:layout_width="172dp"
+      android:layout_height="25dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginLeft="30dp"
+      android:text="MName :"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+  <TextView
+      android:id="@+id/textView18"
+      android:layout_width="175dp"
+      android:layout_height="27dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginLeft="30dp"
+      android:text="No Of Seats :"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+  <TextView
+      android:id="@+id/textView25"
+      android:layout_width="175dp"
+      android:layout_height="31dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginLeft="30dp"
+      android:text="Showing Date :"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+  <TextView
+      android:id="@+id/textView31"
+      android:layout_width="175dp"
+      android:layout_height="28dp"
+      android:layout_marginStart="30dp"
+      android:layout_marginLeft="30dp"
+      android:text="Total Price :"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+  <TextView
+      android:id="@+id/textView32"
+      android:layout_width="367dp"
+      android:layout_height="39dp"
+      android:layout_marginTop="5dp"
+      android:background="#28828387"
+      android:paddingLeft="10dp"
+      android:paddingTop="5dp"
+      android:text="CHECKOUT"
+      android:textColor="#3F51B5"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.54"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+  <TextView
+      android:id="@+id/textView33"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:text="Go Back ?"
+      android:textSize="13dp"
+      android:textColor="#FFBF00"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btn_paynow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

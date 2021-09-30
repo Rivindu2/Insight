@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,23 +7,17 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -32,13 +25,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.UUID;
 
-public class CheckingPageActivity extends AppCompatActivity {
+public class CheckingPagenewActivity extends AppCompatActivity {
     TextView Mid , Mname , Noofseats , Showdate , Tprice;
     TextView fullName,email,phone;
     TextView Input1 , Input2 , Input3 , Input4;
@@ -53,6 +44,7 @@ public class CheckingPageActivity extends AppCompatActivity {
     TextView Tot;
     int Addition = 200;
     Button cal;
+    TextView dash , back;
 
     //dialog variables
     AlertDialog.Builder builderDialog;
@@ -62,16 +54,37 @@ public class CheckingPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checking_page);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_checking_pagenew);
+
         Mid = findViewById(R.id.Mid);
         Mname = findViewById(R.id.Mname);
         Noofseats = findViewById(R.id.Noofseats);
         Showdate = findViewById(R.id.Showdate);
         Tprice = findViewById(R.id.Tprice);
         btn_success = (Button) findViewById(R.id.btn_paynow);
+        dash=findViewById(R.id.tv_topic);
+        back=findViewById(R.id.textView33);
 
-       Input1 = findViewById(R.id.textView27);
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(CheckingPagenewActivity.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(CheckingPagenewActivity.this,ViewCardActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Input1 = findViewById(R.id.textView27);
         Input2 = findViewById(R.id.textView28);
         Input3 = findViewById(R.id.textView29);
         Input4 = findViewById(R.id.textView30);
@@ -96,21 +109,6 @@ public class CheckingPageActivity extends AppCompatActivity {
         }
 
 
-
-        cal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int addition=Integer.parseInt(Tprice.getText().toString());
-                String tprice = String.valueOf(addition + 500);
-                String tot = String.valueOf(Addition + 500);
-                Tot.setText(String.valueOf(tot));
-
-            }
-        });
-
-
-
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("My Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
@@ -125,8 +123,6 @@ public class CheckingPageActivity extends AppCompatActivity {
             }
         });
 
-
-
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
@@ -134,15 +130,8 @@ public class CheckingPageActivity extends AppCompatActivity {
 
         String id = UUID.randomUUID().toString();
 
-
-
-
-
-
-
-
-       documentReference = fStore.collection("users").document(userId).collection("BookingInfo").document("f3a16db8-056e-4e62-af1d-42816fe5261f");
-        documentReference.addSnapshotListener(CheckingPageActivity.this, new EventListener<DocumentSnapshot>() {
+        documentReference = fStore.collection("users").document(userId).collection("BookingInfo").document("f3a16db8-056e-4e62-af1d-42816fe5261f");
+        documentReference.addSnapshotListener(CheckingPagenewActivity.this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
                 if(documentSnapshot.exists()){
@@ -158,9 +147,6 @@ public class CheckingPageActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
 
     }
 
@@ -181,19 +167,17 @@ public class CheckingPageActivity extends AppCompatActivity {
                 alertDialog.dismiss();
 
                 //notification code goes here
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(CheckingPageActivity.this, "My Notification");
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(CheckingPagenewActivity.this, "My Notification");
                 builder.setContentTitle("PAYMENT");
                 builder.setContentText("Order is Completed!!");
                 builder.setSmallIcon(R.drawable.ic_launcher_background);
                 builder.setAutoCancel(true);
 
-                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(CheckingPageActivity.this);
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(CheckingPagenewActivity.this);
                 managerCompat.notify(1,builder.build());
 
-                startActivity(new Intent(CheckingPageActivity.this , dashboardActivity.class));
+                startActivity(new Intent(CheckingPagenewActivity.this , dashboardActivity.class));
             }
         });
     }
-
-
 }

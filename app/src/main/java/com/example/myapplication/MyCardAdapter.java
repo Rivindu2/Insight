@@ -79,10 +79,15 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyViewCard
 
     @Override
     public void onBindViewHolder(@NonNull MyViewCardHolder holder, int position) {
-        holder.Input1.setText(mList.get(position).getInput1());
+        CardModel model = mList.get(position);
+        /*holder.Input1.setText(mList.get(position).getInput1());
         holder.Input2.setText(mList.get(position).getInput2());
         holder.Input3.setText(mList.get(position).getInput3());
-        holder.Input4.setText(mList.get(position).getInput4());
+        holder.Input4.setText(mList.get(position).getInput4());*/
+        holder.Input1.setText(model.Input1);
+        holder.Input2.setText(model.Input2);
+        holder.Input3.setText(model.Input3);
+        holder.Input4.setText(model.Input4);
 
 
     }
@@ -92,7 +97,7 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyViewCard
         return mList.size();
     }
 
-    public static class MyViewCardHolder extends RecyclerView.ViewHolder{
+    public class MyViewCardHolder extends RecyclerView.ViewHolder{
 
         TextView Input1 , Input2 , Input3 , Input4;
 
@@ -103,6 +108,21 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyViewCard
             Input2 = itemView.findViewById(R.id.Input2_text);
             Input3 = itemView.findViewById(R.id.Input3_text);
             Input4 = itemView.findViewById(R.id.Input4_text);
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent i=new Intent(v.getContext(), CheckingPagenewActivity.class);
+
+                    i.putExtra("Input1", mList.get(getAdapterPosition()).getInput1());
+                    i.putExtra("Input2", mList.get(getAdapterPosition()).getInput2());
+                    i.putExtra("Input3", mList.get(getAdapterPosition()).getInput3());
+                    i.putExtra("Input4", mList.get(getAdapterPosition()).getInput4());
+
+
+                    v.getContext().startActivity(i);
+                }
+            });
         }
     }
 

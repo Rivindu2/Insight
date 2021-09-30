@@ -155,6 +155,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
         android:text="apply"
+        android:backgroundTint="@color/colorSecondaryDemo"
         app:layout_constraintBottom_toBottomOf="@+id/v_view"
         app:layout_constraintEnd_toEndOf="@+id/v_view"
         app:layout_constraintHorizontal_bias="0.495"
@@ -177,21 +178,6 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/v_view" />
-
-    <Button
-        android:id="@+id/btn_c"
-        android:layout_width="323dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:background="#0844A4"
-        android:text="Continue"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:backgroundTint="#0844A4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_addcard" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
