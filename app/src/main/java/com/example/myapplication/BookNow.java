@@ -131,6 +131,7 @@ public class BookNow extends AppCompatActivity {
         bookDetailsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 viewBookDetails();
             }
         });

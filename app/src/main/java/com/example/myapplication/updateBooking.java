@@ -11,6 +11,7 @@ import android.app.DatePickerDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +36,7 @@ public class updateBooking extends AppCompatActivity {
     TextView mTitle;
     TextView seatsNo,ticketId;
     EditText eDate;
-    Button updateBtn;
+    Button updateBtn, updateBackBtn;
     String userId;
     private FirebaseAuth fAuth;
     String uTitle, uDate, seatsNum;
@@ -52,6 +53,8 @@ public class updateBooking extends AppCompatActivity {
         seatsNo=findViewById(R.id.seatsNo);
         updateBtn=findViewById(R.id.updateBtn);
         ticketId=findViewById(R.id.ticketId);
+
+
         Calendar calender=Calendar.getInstance();
         final int year=calender.get(calender.YEAR);
         final int month=calender.get(calender.MONTH);
@@ -112,8 +115,19 @@ public class updateBooking extends AppCompatActivity {
                 updateToFireStore(id, date);
             }
         });
+        updateBackBtn=findViewById(R.id.updateBackBtn);
+        updateBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewBookDetails();
+            }
+        });
 
+    }
 
+    public void viewBookDetails(){
+        Intent intent = new Intent(this, BookDetails.class);
+        startActivity(intent);
     }
 
 
@@ -157,4 +171,5 @@ public class updateBooking extends AppCompatActivity {
             }
         });
     }
+
 }
