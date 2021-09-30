@@ -44,5 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+
 
 }

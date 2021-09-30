@@ -8,6 +8,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#CAE1E3"
         android:orientation="vertical">
@@ -24,18 +34,18 @@
                 android:padding="8dp"
                 android:text="Movie Name:"
                 android:textColor="#000"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/mName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
-                android:padding="8dp"
+                android:padding="7dp"
                 android:text="Title"
                 android:textColor="#000"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,12 +57,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="Genre:"
                 android:textColor="#000"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/cat"
+                android:id="@+id/category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
@@ -72,6 +83,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="Duration:"
                 android:textColor="#000"
                 android:textSize="18sp" />
@@ -96,5 +108,13 @@
             android:orientation="horizontal">
 
         </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/drawable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/movie_selection"
+            android:orientation="horizontal"></LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -13,6 +13,12 @@
             android:name=".CheckingPagenewActivity"
             android:exported="true" />
         <activity
+            android:name=".updateBooking"
+            android:exported="true" />
+        <activity
+            android:name=".BookDetails"
+            android:exported="true" />
+        <activity
             android:name=".ShowbookingActivity"
             android:exported="true" />
         <activity

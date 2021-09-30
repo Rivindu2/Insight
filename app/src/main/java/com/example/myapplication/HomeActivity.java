@@ -33,15 +33,10 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     RecyclerView recyclerView1;
-    TabLayout tabLayout1;
-    ViewPager2 pager2;
     movieDetailsAdapter mAdapter;
     FirebaseFirestore db;
     ArrayList<movieDetailsModel> movieArrayList;
     ProgressDialog progressDialog;
-    Button bookNowBtn;
-    TextView bookButton;
-    String userId;
     FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
