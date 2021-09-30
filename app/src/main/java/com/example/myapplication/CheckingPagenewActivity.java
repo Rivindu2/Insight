@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class CheckingPagenewActivity extends AppCompatActivity {
-    TextView Mid , Mname , Noofseats , Showdate , Tprice;
+    TextView Id , MovieName , NoOfseats , bookDate , Total;
     TextView fullName,email,phone;
     TextView Input1 , Input2 , Input3 , Input4;
     FirebaseAuth fAuth;
@@ -57,11 +57,7 @@ public class CheckingPagenewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checking_pagenew);
 
-        Mid = findViewById(R.id.Mid);
-        Mname = findViewById(R.id.Mname);
-        Noofseats = findViewById(R.id.Noofseats);
-        Showdate = findViewById(R.id.Showdate);
-        Tprice = findViewById(R.id.Tprice);
+
         btn_success = (Button) findViewById(R.id.btn_paynow);
         dash=findViewById(R.id.tv_topic);
         back=findViewById(R.id.textView33);
@@ -108,6 +104,30 @@ public class CheckingPagenewActivity extends AppCompatActivity {
 
         }
 
+        /*Id = findViewById(R.id.textView16);
+        MovieName = findViewById(R.id.textView17);
+        bookDate = findViewById(R.id.textView18);
+        NoOfseats = findViewById(R.id.textView25);
+        Total = findViewById(R.id.textView31);
+
+        Intent o = getIntent();
+        String id = o.getStringExtra("id");
+        String movieName = o.getStringExtra("movieName");
+        String noOfseats = o.getStringExtra("No_Of_Seats");
+        String bookdate = o.getStringExtra("bookDate");
+        String total = o.getStringExtra("Total");
+
+        if (id!=null && movieName!=null && bookdate!=null && noOfseats!=null && total!=null){
+            Id.setText(id);
+            MovieName.setText(movieName);
+            bookDate.setText(bookdate);
+            NoOfseats.setText(noOfseats);
+            Total.setText(total);
+            Context context = getApplicationContext();
+        }else {
+
+        }*/
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("My Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
@@ -123,7 +143,7 @@ public class CheckingPagenewActivity extends AppCompatActivity {
             }
         });
 
-        fAuth = FirebaseAuth.getInstance();
+        /*fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
         userId = fAuth.getCurrentUser().getUid();
@@ -146,7 +166,7 @@ public class CheckingPagenewActivity extends AppCompatActivity {
                     Log.d("tag", "onEvent: Document do not exists");
                 }
             }
-        });
+        });*/
 
     }
 
@@ -168,8 +188,8 @@ public class CheckingPagenewActivity extends AppCompatActivity {
 
                 //notification code goes here
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(CheckingPagenewActivity.this, "My Notification");
-                builder.setContentTitle("PAYMENT");
-                builder.setContentText("Order is Completed!!");
+                builder.setContentTitle("PAYMENT NOTIFICATION");
+                builder.setContentText("Payment Successfully!!");
                 builder.setSmallIcon(R.drawable.ic_launcher_background);
                 builder.setAutoCancel(true);
 
