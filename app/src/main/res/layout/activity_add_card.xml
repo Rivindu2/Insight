@@ -139,12 +139,12 @@
         android:layout_width="365dp"
         android:layout_height="52dp"
         android:layout_marginTop="12dp"
-        android:background="#0844A4"
+        android:textColor="@color/black"
         android:text="Add Card &amp; Save"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:backgroundTint="#0844A4"
+        android:background="@drawable/button_background_success"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,11 +155,11 @@
         android:layout_width="366dp"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
-        android:background="#0844A4"
+        android:background="@drawable/button_background_success"
         android:text="View Card Details"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:backgroundTint="#0844A4"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
@@ -196,8 +196,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText2"
-        android:layout_width="117dp"
-        android:layout_height="42dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:hint="EXP Date"
@@ -214,20 +214,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_cvv"
         android:inputType="numberPassword"/>
-
-    <Button
-        android:id="@+id/btn_continue"
-        android:layout_width="366dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:background="#0844A4"
-        android:text="Continue"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:backgroundTint="#0844A4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
