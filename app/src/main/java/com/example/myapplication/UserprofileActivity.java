@@ -41,6 +41,7 @@ public class UserprofileActivity extends AppCompatActivity {
     Button changeProfileImage;
     StorageReference storageReference;
     TextView back;
+    TextView dash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,16 @@ public class UserprofileActivity extends AppCompatActivity {
         profileImage = findViewById(R.id.profileImageView);
         changeProfileImage = findViewById(R.id.button2);
         back = findViewById(R.id.textView14);
+        dash=findViewById(R.id.tv_topic2);
+
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(UserprofileActivity.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

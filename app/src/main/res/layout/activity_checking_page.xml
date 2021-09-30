@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".CheckingPageActivity">
 
-
     <TextView
         android:id="@+id/movieid5"
-        android:layout_width="187dp"
-        android:layout_height="36dp"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="456dp"
         android:padding="3dp"
         android:text="Total Price :"
         android:textColor="#000"
@@ -24,11 +23,11 @@
 
     <TextView
         android:id="@+id/movieid4"
-        android:layout_width="178dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="348dp"
+        android:layout_width="176dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="428dp"
         android:padding="3dp"
         android:text="Show Date :"
         android:textColor="#000"
@@ -43,7 +42,7 @@
         android:layout_height="24dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="404dp"
         android:padding="3dp"
         android:text="No Of Seats :"
         android:textColor="#000"
@@ -52,13 +51,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+
     <TextView
         android:id="@+id/movieid2"
         android:layout_width="186dp"
         android:layout_height="25dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="376dp"
         android:padding="3dp"
         android:text="Movie Name :"
         android:textColor="#000"
@@ -71,9 +71,9 @@
         android:id="@+id/movieid"
         android:layout_width="185dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="348dp"
         android:padding="3dp"
         android:text="Movie ID"
         android:textColor="#000"
@@ -119,34 +119,49 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="88dp" />
 
-
-    <ImageView
-        android:id="@+id/img_visacard"
-        android:layout_width="209dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="34dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_nav5"
-        app:srcCompat="@drawable/img_realvisa" />
-
-    <ImageView
-        android:id="@+id/img_master"
-        android:layout_width="178dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="36dp"
+    <View
+        android:id="@+id/vd_line"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toEndOf="@+id/img_visacard"
-        app:layout_constraintTop_toBottomOf="@+id/v_nav5"
-        app:srcCompat="@drawable/img_realmaster" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav5" />
+
+    <View
+        android:id="@+id/hd_line"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:background="#28828387"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/tv_paymentnav"
+        android:layout_width="207dp"
+        android:layout_height="49dp"
+        android:background="#28828387"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:text="Payment"
+        android:textAlignment="center"
+        android:textColor="#E13528"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav5" />
+
 
     <TextView
         android:id="@+id/tv_checkout"
         android:layout_width="361dp"
         android:layout_height="41dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="#28828387"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
@@ -155,13 +170,16 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_visacard" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <LinearLayout
         android:layout_width="189dp"
         android:layout_height="144dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_checkout"
@@ -214,116 +232,96 @@
 
         <TextView
             android:id="@+id/Tprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="195dp"
+            android:layout_height="36dp"
             android:padding="3dp"
             android:text="Tprice"
             android:textColor="#000"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="399dp" />
+            android:textSize="16sp" />
 
 
     </LinearLayout>
 
-
     <View
-        android:id="@+id/divider2"
+        android:id="@+id/divider"
         android:layout_width="360dp"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieid5"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="514dp" />
 
     <View
         android:id="@+id/divider3"
         android:layout_width="360dp"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="526dp" />
 
     <Button
-        android:id="@+id/btn_paynow"
+        android:id="@+id/btn_paynow1"
         android:layout_width="350dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="132dp"
         android:text="Pay Now"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:background="@android:color/white"
+        android:textColor="@color/black"
         app:backgroundTint="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        android:background="@drawable/button_background_success"
+        app:layout_constraintHorizontal_bias="0.379"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
-        android:layout_width="191dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:text="Internet Handling Fee :"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="169dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="200.0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/divider2" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="194dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="72dp"
-        android:text="Sub Total :"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="172dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="72dp"
+        android:id="@+id/textView27"
+        android:layout_width="252dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hd_line" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="99dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="View"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="259dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="3dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="262dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="262dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
