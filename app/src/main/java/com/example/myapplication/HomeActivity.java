@@ -38,12 +38,22 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<movieDetailsModel> movieArrayList;
     ProgressDialog progressDialog;
     FirebaseAuth fAuth;
+    TextView dash;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        dash=findViewById(R.id.tv_topic2);
 
+        dash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeActivity.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);

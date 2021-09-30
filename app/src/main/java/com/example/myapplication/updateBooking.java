@@ -34,7 +34,7 @@ public class updateBooking extends AppCompatActivity {
     private FirebaseFirestore db;
     private String  uId;
     TextView mTitle;
-    TextView seatsNo,ticketId;
+    TextView seatsNo,ticketId, dash;
     EditText eDate;
     Button updateBtn, updateBackBtn;
     String userId;
@@ -47,7 +47,16 @@ public class updateBooking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_booking);
+        dash=findViewById(R.id.tv_topic2);
 
+        dash.setOnClickListener(new View.OnClickListener() {//redirects to the dashboard
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(updateBooking.this,dashboardActivity.class);
+                startActivity(intent);
+
+            }
+        });
         mTitle=findViewById(R.id.mName);
         eDate=findViewById(R.id.et_date);
         seatsNo=findViewById(R.id.seatsNo);
