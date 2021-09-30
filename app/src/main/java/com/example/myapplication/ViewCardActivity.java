@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +30,7 @@ public class ViewCardActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private MyCardAdapter adapter;
     private List<CardModel> list;
+    private Button addB;
     String userId;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -36,6 +40,15 @@ public class ViewCardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_card);
+
+        addB = findViewById(R.id.button3);
+
+        addB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ViewCardActivity.this , AddCardActivity.class));
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
