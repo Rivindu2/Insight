@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".updateBooking"
+            android:exported="true" />
+        <activity
             android:name=".BookDetails"
             android:exported="true" />
         <activity

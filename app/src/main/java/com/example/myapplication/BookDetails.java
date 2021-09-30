@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,6 +52,9 @@ public class BookDetails extends AppCompatActivity {
         recyclerViewBookings.setAdapter(bAdapter);
         showData();
 
+        ItemTouchHelper touchHelper=new ItemTouchHelper(new TouchBookDetails(bAdapter));
+        touchHelper.attachToRecyclerView(recyclerViewBookings);
+
     }
 
     public void showData(){
@@ -73,6 +77,9 @@ public class BookDetails extends AppCompatActivity {
                         bAdapter.notifyDataSetChanged();
                         if(progressDialog.isShowing())
                             progressDialog.dismiss();
+                        Toast.makeText(BookDetails.this,"To update the date, swipe left <--",Toast.LENGTH_LONG).show();
+                        Toast.makeText(BookDetails.this,"To cancel the booking swipe right -->",Toast.LENGTH_LONG).show();
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override

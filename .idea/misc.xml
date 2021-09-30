@@ -4,19 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Campus studies/2nd Year 2nd Sem/Mobile Application Development/Insight/app/src/main/res/layout/activity_add_crad.xml" value="0.29483695652173914" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/drawable/editticket.xml" value="0.1125" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1125" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/drawable/ic_baseline_local_movies_24.xml" value="0.14479166666666668" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/drawable/ic_home.xml" value="0.2203125" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/drawable/movie.xml" value="0.2203125" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout-v21/activity_home.xml" value="0.20102564102564102" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_addmovie.xml" value="0.1" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_admin_login.xml" value="0.18" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_book_details.xml" value="0.25" />
-        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_book_now.xml" value="0.25" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_book_now.xml" value="0.33" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_cusbooking.xml" value="0.22" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_dashboard.xml" value="0.18" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_displayfirst.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_feedback.xml" value="0.20416666666666666" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/activity_update_booking.xml" value="0.22" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/bookcard.xml" value="0.33" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/booking.xml" value="0.25" />
+        <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/bookitem.xml" value="0.1" />
         <entry key="..\:/Projects/Android/Insight_updated/app/src/main/res/layout/movies.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MADPROJECT/app/src/main/res/drawable-v24/progress_back.xml" value="0.3880208333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MADPROJECT/app/src/main/res/drawable-v24/round_drawable.xml" value="0.3880208333333333" />
