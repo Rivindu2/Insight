@@ -49,7 +49,7 @@ public class updateBooking extends AppCompatActivity {
         setContentView(R.layout.activity_update_booking);
         dash=findViewById(R.id.tv_topic2);
 
-        dash.setOnClickListener(new View.OnClickListener() {
+        dash.setOnClickListener(new View.OnClickListener() {//redirects to the dashboard
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(updateBooking.this,dashboardActivity.class);
