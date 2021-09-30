@@ -68,6 +68,23 @@ public class bookDetailsAdapter extends RecyclerView.Adapter<bookDetailsAdapter.
             noOfSeats=itemView.findViewById(R.id.noSeats);
             Total=itemView.findViewById(R.id.Total);
 
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent o=new Intent(v.getContext(), RetrievedetailsActivity.class);
+
+                    o.putExtra("id", BookDetailsModelArrayList.get(getAdapterPosition()).getId());
+                    o.putExtra("movieName", BookDetailsModelArrayList.get(getAdapterPosition()).getMovieName());
+                    o.putExtra("No_Of_Seats", BookDetailsModelArrayList.get(getAdapterPosition()).getBookDate());
+                    o.putExtra("bookDate", BookDetailsModelArrayList.get(getAdapterPosition()).getNoofseats());
+                    o.putExtra("Total", BookDetailsModelArrayList.get(getAdapterPosition()).getTotal());
+
+                    v.getContext().startActivity(o);
+                }
+            });
+
+
+
         }
     }
 
