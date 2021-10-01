@@ -39,7 +39,6 @@ public class TouchSlide extends ItemTouchHelper.SimpleCallback  {
 
     @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-
         new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                 .addSwipeRightBackgroundColor(Color.RED)
                 .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_24)
@@ -50,4 +49,5 @@ public class TouchSlide extends ItemTouchHelper.SimpleCallback  {
 
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
     }
+
 }

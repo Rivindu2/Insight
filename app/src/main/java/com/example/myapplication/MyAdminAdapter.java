@@ -65,14 +65,14 @@ private void notifyRemoved(int position){
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(activity).inflate(R.layout.amcarditem,parent,false);
+        View v= LayoutInflater.from(activity).inflate(R.layout.amcarditem,parent,false);//display to card
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(mlist.get(position).getName());
-        holder.cat.setText(mlist.get(position).getCat());
+        holder.cat.setText(mlist.get(position).getCat());//getfrom model
         holder.duration.setText(mlist.get(position).getDuration());
 
 
@@ -87,7 +87,7 @@ private void notifyRemoved(int position){
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView name,cat,duration;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView) {//to display to card
             super(itemView);
 
             name=itemView.findViewById(R.id.moviename_text);
@@ -97,5 +97,7 @@ private void notifyRemoved(int position){
 
         }
     }
+
+
 
 }

@@ -7,12 +7,15 @@ import androidx.core.app.NotificationManagerCompat;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,8 +27,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class AddmovieActivity extends AppCompatActivity {
-
-
+    Context context;
 
     private EditText movieName,movieCat,movieDuration;
     private Button addMovieBtn,showMoviesBtn,logout;
@@ -41,6 +43,12 @@ public class AddmovieActivity extends AppCompatActivity {
             NotificationManager manager= getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
 
+        }//check for notifications
+        //check internet connection on home page
+        if(!isConnected()){
+            Toast.makeText(AddmovieActivity.this, "No internet Connection", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(AddmovieActivity.this, "welcome to app", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -53,7 +61,7 @@ public class AddmovieActivity extends AppCompatActivity {
 
         db=FirebaseFirestore.getInstance();
         logout=findViewById(R.id.ALogout);
-        logout.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {//log out button
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AddmovieActivity.this,AdminLoginActivity.class));
@@ -61,7 +69,7 @@ public class AddmovieActivity extends AppCompatActivity {
         });
 
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null){
+        if(bundle!=null){//to check if to add movie or update
             addMovieBtn.setText("Update");
 
             aId=bundle.getString("aId");
@@ -74,20 +82,24 @@ public class AddmovieActivity extends AppCompatActivity {
             movieDuration.setText(aDuration);
 
 
-        }else {
+        }else {//to add movie
             addMovieBtn.setText("Add Movie");
         }
 
         showMoviesBtn.setOnClickListener(new View.OnClickListener() {//onclick view movies
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AddmovieActivity.this,ViewMovieActivity.class));
+                if(!isConnected()){//check internet connection for view movies
+                    Toast.makeText(AddmovieActivity.this, "No internet Connection", Toast.LENGTH_SHORT).show();
+                }else {
+                    startActivity(new Intent(AddmovieActivity.this, ViewMovieActivity.class));
+                }
             }
         });
 
         addMovieBtn.setOnClickListener(new View.OnClickListener() {//Onclick addd movie button
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) {//
 
                 String duration=movieDuration.getText().toString();
                 String name=movieName.getText().toString();
@@ -95,20 +107,26 @@ public class AddmovieActivity extends AppCompatActivity {
 
                  Bundle bundle1=getIntent().getExtras();//check if user wants to update data or add new data
                  if (bundle1 !=null){
-                     String id=aId;
-                     updatetoFirestore(id,name,cat,duration);
-
-                 }else {
-                     String id= UUID.randomUUID().toString();//generate random variable
-
+                     if(!isConnected()){//check internet connection for add
+                         Toast.makeText(AddmovieActivity.this, "No internet Connection", Toast.LENGTH_SHORT).show();
+                     }else {
+                         String id = aId;
+                         updatetoFirestore(id, name, cat, duration);
+                     }
+                 }else {//check internet connection for update
+                     if(!isConnected()){
+                         Toast.makeText(AddmovieActivity.this, "No internet Connection", Toast.LENGTH_SHORT).show();
+                     }else {
+                         String id = UUID.randomUUID().toString();//generate random variable
                          saveToFireStore(id, name, cat, duration);
+                     }
                  }
             }
         });
     }
-    private void updatetoFirestore(String id,String name,String cat,String duration){
+    private void updatetoFirestore(String id,String name,String cat,String duration){//update to firestore method
         if(movieName.length()>=2 && movieCat.length()>=4 && movieDuration.length()>0) {
-            float division=Float.parseFloat(duration);
+            float division=Float.parseFloat(duration); //calculation
             float s=division/60;
             String du=String.valueOf(s);
             db.collection("MovieDocuments").document(id).update("name", name, "cat", cat, "duration", du)
@@ -117,7 +135,7 @@ public class AddmovieActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(AddmovieActivity.this, "Data Successfully updated", Toast.LENGTH_SHORT).show();
-                                movieName.setText("");
+                                movieName.setText("");//reset fields
                                 movieCat.setText("");
                                 movieDuration.setText("");
                                 NotificationCompat.Builder builder=new NotificationCompat.Builder(AddmovieActivity.this,"AdminNotification");
@@ -138,27 +156,26 @@ public class AddmovieActivity extends AppCompatActivity {
                     Toast.makeText(AddmovieActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-        }else{ if(movieName.length()<2){movieName.setError("Movie name >2 characters");}
-            if(movieCat.length()<4){movieCat.setError("Movie cat >4");}
-            if(movieDuration.length()<=0){movieDuration.setError("Required");}
+        }else{ if(movieName.length()<2){movieName.setError("Movie name >2 characters");}//update validaton
+            if(movieCat.length()<4){movieCat.setError("Movie cat >4");}//update validation
+            if(movieDuration.length()<=0){movieDuration.setError("Required");}//update validation
         }
 
     }
-
-    private void saveToFireStore(String id,String name,String cat,String duration){///to save to firestore
+    private void saveToFireStore(String id,String name,String cat,String duration){///to save to firestore method
 
     if(movieName.length()>=2 && movieCat.length()>=4 && movieDuration.length()>0) {
-        float division=Float.parseFloat(duration);
+        float division=Float.parseFloat(duration);//calculation
         float s=division/60;
         String du=String.valueOf(s);
-            HashMap<String, Object> map = new HashMap<>();
+            HashMap<String, Object> map = new HashMap<>();//hashput to save(put) new to firestore
             map.put("id", id);
             map.put("name", name);
             map.put("cat", cat);
             map.put("duration", du);
 
             db.collection("MovieDocuments").document(id).set(map)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {//add to firestore
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
@@ -166,7 +183,7 @@ public class AddmovieActivity extends AppCompatActivity {
                                 movieName.setText("");
                                 movieCat.setText("");
                                 movieDuration.setText("");
-                                NotificationCompat.Builder builder=new NotificationCompat.Builder(AddmovieActivity.this,"AdminNotification");
+                                NotificationCompat.Builder builder=new NotificationCompat.Builder(AddmovieActivity.this,"AdminNotification");//notification
                                 builder.setContentTitle("Insight Admin Movie Added");
                                 builder.setContentText(name);
                                 builder.setSmallIcon(R.drawable.ic_baseline_notifications_24);
@@ -189,7 +206,16 @@ public class AddmovieActivity extends AppCompatActivity {
             }
 
     }
+    private boolean isConnected(){//check internet connection method
+        ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(context.CONNECTIVITY_SERVICE);
+        return connectivityManager.getActiveNetworkInfo()!=null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
+    }
 }
+
+
+
+
+
 /*  float division=Integer.parseInt(movieDuration.getText().toString());
                 float s=division/60;
                 String duration=String.valueOf(s);*/
