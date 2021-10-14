@@ -9,7 +9,7 @@ This is our first android App
 SLIIT 2nd Year 2nd Semester Mobile Application Development (MAD) Mini Project
 | Lanuage - JAVA | Database - FireBase | IDE - Android Studio | Integrate Technology Service - Github
 
-Team:
+Team:<br>
 K.O.R.P.Karunanayake,<br>
 Muthuni Suwanthi S. D,<br>
 S.A.C.H.Senadeera,<br>
