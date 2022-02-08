@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Insight Cinemas</string>
     <string name="channel_description">Your time has been updated...</string>
     <string name="channel_name">Ticket Schedule Update</string>
 </resources>

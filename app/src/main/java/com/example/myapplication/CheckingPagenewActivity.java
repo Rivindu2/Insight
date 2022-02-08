@@ -190,7 +190,7 @@ public class CheckingPagenewActivity extends AppCompatActivity {
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(CheckingPagenewActivity.this, "My Notification");
                 builder.setContentTitle("PAYMENT NOTIFICATION");
                 builder.setContentText("Payment Successfully!!");
-                builder.setSmallIcon(R.drawable.ic_launcher_background);
+//                builder.setSmallIcon(R.drawable.ic_launcher_background);
                 builder.setAutoCancel(true);
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(CheckingPagenewActivity.this);
